@@ -79,18 +79,26 @@ body {
 }
 
 .profile-img {
-    width: 130px;
-    height: 130px;
-    object-fit: cover;
-    border-radius: 50%;
+    width: 180px;
+    height: 120px;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 60% / 50%;
     border: 2px solid var(--accent); /* Sárga keret a kép körül */
     filter: grayscale(100%);
     transition: all 0.5s ease;
+    background-color: rgba(255,255,255,0.02);
 }
 
 .profile-img:hover {
     filter: grayscale(0%);
     box-shadow: 0 0 20px rgba(212, 175, 55, 0.3); /* Sárga ragyogás */
+}
+
+/* Touch/scroll aktiválásra (mobil) */
+.profile-wrapper.touch-active .profile-img {
+    filter: grayscale(0%);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.35);
 }
 
 /* Szövegek */
@@ -180,7 +188,6 @@ h1 {
 
 /* Ikonok a gomb mellett (opcionális unicode nyilak) */
 .link-btn::before {
-    content: '▶';
     position: absolute;
     left: 10px;
     opacity: 0;

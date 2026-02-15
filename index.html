@@ -34,5 +34,24 @@
 
     </div>
 
+    <script>
+        (function(){
+            const wrapper = document.querySelector('.profile-wrapper');
+            if(!wrapper) return;
+            let timer = null;
+            const DURATION = 800; // ms to keep the image colored after interaction
+
+            function activate() {
+                wrapper.classList.add('touch-active');
+                if (timer) clearTimeout(timer);
+                timer = setTimeout(() => wrapper.classList.remove('touch-active'), DURATION);
+            }
+
+            ['touchstart','touchmove','pointerdown','mousedown','click','scroll'].forEach(evt => {
+                window.addEventListener(evt, activate, {passive: true});
+            });
+        })();
+    </script>
+
 </body>
 </html>
