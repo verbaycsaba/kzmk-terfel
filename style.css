@@ -212,3 +212,92 @@ footer a {
     color: var(--accent);
     text-decoration: none;
 }
+
+/* --- SOCIAL ICONS ROW --- */
+.social-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    margin: 2.5rem auto 0 auto;
+    width: 100%;
+    max-width: 480px;
+}
+
+.social-icon {
+    /* ...existing code... */
+}
+
+/* --- SOCIAL BUTTONS --- */
+.social-btn {
+    flex: 1 1 0;
+    min-width: 120px;
+    max-width: 180px;
+    height: 56px;
+    padding: 0 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    font-family: var(--font-body);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 0.9rem;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: 1;
+}
+
+.social-btn .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+}
+
+.social-btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: var(--accent);
+    transition: width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: -1;
+}
+
+.social-btn:hover,
+.social-btn:active {
+    color: var(--btn-text-hover);
+}
+
+.social-btn:hover::after,
+.social-btn:active::after {
+    width: 100%;
+}
+
+.social-btn .icon svg {
+    width: 32px;
+    height: 32px;
+    display: block;
+}
+
+.social-icon svg {
+    display: block;
+    width: 48px;
+    height: 48px;
+}
+
+.social-icon:hover {
+    transform: scale(1.12) rotate(-3deg);
+    box-shadow: 0 4px 18px rgba(212, 175, 55, 0.25);
+    color: #000;
+}
