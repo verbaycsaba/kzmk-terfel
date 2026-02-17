@@ -213,11 +213,6 @@ footer a {
     text-decoration: none;
 }
 
-/* --- SOCIAL ICONS ROW --- */
-.social-row {
-    /* ...existing code... */
-}
-
 /* --- SOCIAL ICONS --- */
 .social-icons {
     display: flex;
@@ -354,7 +349,7 @@ footer a {
 }
 
 .social-icon:hover {
-    transform: scale(1.12) rotate(-3deg);
+    transform: scale(1.12);
     box-shadow: 0 4px 18px rgba(212, 175, 55, 0.25);
     color: #000;
 }
